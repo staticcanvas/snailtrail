@@ -1,3 +1,23 @@
 /node_modules
 /dist
 .npmrc
+/examples/*.js
+/examples/*.map
+
+# Ignore environment variable files
+*.env
+build.env
+
+
+# Ignore log files
+*.log
+
+# Ignore OS generated files
+.DS_Store
+Thumbs.db
+# Ignore IDE/editor specific files
+.vscode/
+.idea/
+
+# ignore automator-devops
+automation-devops

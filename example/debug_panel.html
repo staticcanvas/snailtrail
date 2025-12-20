@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Your Static Site</title>
+        <style>
+            body {
+                min-height: 200vh;
+                padding-bottom: 50px;
+            }
+
+            h1 {
+                text-align: center;
+                margin-top: 50px;
+            }
+        </style>
+        <script src="https://cdn.jsdelivr.net/npm/@staticcanvas/logcad@0.4.10/dist/logcad.min.js"></script> 
+        <link rel="stylesheet" href="../css/default.css" />
+        <script type="module">
+            // import * as logcad from 'https://cdn.jsdelivr.net/npm/@staticcanvas/logcad@0.4.10/+esm'
+            // console.log(logcad)
+            // logd ({ name: 'logd' }, 'action', 'message')
+            import { SnailTrailDebugger, initSnailTrailDebugger } from "./snailtrail.esm.js";
+            window.__BUILD_TIMESTAMP = "Thurs, 14 Nov 2024 10:30:00 GMT";
+            window.__BUILD_HASH = "abc123def456";
+            window.__BUILD_ENV = "production";
+            localStorage.__snail_debug = "true";
+            const snailTrailDebugger = new SnailTrailDebugger({
+                buildInfo: {
+                    version: "0.1.0",
+                    timestamp: "Thurs, 14 Nov 2024 10:30:00 GMT",
+                    hash: "abc123def456",
+                    env: "production",
+                    arc: "ruby 2.7.4 -> jekyll 4.2.0 -> gem 3.2.22",
+                },
+                theme: "theme-github-dark",
+            });
+            initSnailTrailDebugger();
+        </script>
+    </head>
+
+    <body>
+        <div class="container">
+            <header class="header">
+                <div class="logo"><h1>DEBUG PANEL</h1></div>
+                <div class="header-actions">
+                    <button id="menu" class="menu-toggle">MENU</button>
+                </div>
+            </header>
+        </div>
+        <script>
+            // window.__BUILD_TIMESTAMP__ = 'Thurs, 14 Nov 2024 10:30:00 GMT';
+            // window.__BUILD_HASH__ = 'abc123def456';
+            // window.__BUILD_ENV__ = 'production';
+            // localStorage._debug = 'true';
+        </script>
+        <!--<script src="./snailtrail-debugger.js"></script>-->
+    </body>
+</html>

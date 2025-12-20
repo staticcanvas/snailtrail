@@ -1,0 +1,562 @@
+:root {
+    /* --- DEFAULT THEME (Hacker/Matrix) --- */
+
+    /* Backgrounds */
+    --st-bg-panel: #222;
+    --st-bg-controls: #333;
+    --st-bg-scrollbar: #111;
+
+    /* Borders & Separators */
+    --st-border-main: #0f0;
+    /* The bright main border */
+    --st-border-inner: #555;
+    /* Tab separator */
+    --st-border-dotted: #333;
+    /* List item separators */
+    --st-border-dashed: #444;
+    /* Heading underline */
+
+    /* Text Colors */
+    --st-text-main: #eee;
+    --st-text-title: #0f0;
+    --st-text-heading: #0f0;
+    --st-text-subheading: #ccc;
+    --st-text-muted: #aaa;
+    /* Inactive tabs */
+
+    /* Interactive Elements (Buttons/Handle) */
+    --st-accent-color: #0f0;
+    --st-handle-bg: #0f0;
+    --st-handle-text: #222;
+    --st-btn-bg: #0f0;
+    --st-btn-text: #222;
+
+    /* Syntax Highlighting */
+    --st-key-color: #2e9be8;
+    --st-value-color: #42e73f;
+    --st-note-color: #f00;
+
+    /* JS Event Colors */
+    --st-js-bg: #333;
+    --st-js-event: rgb(174, 255, 0);
+    --st-js-element: rgb(0, 217, 255);
+    --st-js-type: #fff;
+
+    /* Typography */
+    --st-font-family: monospace;
+    --st-font-size: 14px;
+    --st-line-height: 1.2;
+}
+
+.theme-snailtrail {
+    /* Backgrounds */
+    --st-bg-panel: #222;
+    --st-bg-controls: #333;
+    --st-bg-scrollbar: #111;
+
+    /* Borders & Separators */
+    --st-border-main: #0f0;
+    /* The bright main border */
+    --st-border-inner: #555;
+    /* Tab separator */
+    --st-border-dotted: #333;
+    /* List item separators */
+    --st-border-dashed: #444;
+    /* Heading underline */
+
+    /* Text Colors */
+    --st-text-main: #eee;
+    --st-text-title: #0f0;
+    --st-text-heading: #0f0;
+    --st-text-subheading: #ccc;
+    --st-text-muted: #aaa;
+    /* Inactive tabs */
+
+    /* Interactive Elements (Buttons/Handle) */
+    --st-accent-color: #0f0;
+    --st-handle-bg: #0f0;
+    --st-handle-text: #222;
+    --st-btn-bg: #0f0;
+    --st-btn-text: #222;
+
+    /* Syntax Highlighting */
+    --st-key-color: #2e9be8;
+    --st-value-color: #42e73f;
+    --st-note-color: #f00;
+
+    /* JS Event Colors */
+    --st-js-bg: #333;
+    --st-js-event: rgb(174, 255, 0);
+    --st-js-element: rgb(0, 217, 255);
+    --st-js-type: #fff;
+
+    /* Typography */
+    --st-font-family: monospace;
+    --st-font-size: 14px;
+    --st-line-height: 1.2;
+}
+
+.theme-newspaper {
+    --st-bg-panel: #f4f1ea;
+    --st-bg-controls: #e9e4d8;
+    --st-border-main: #333;
+    --st-border-inner: #ccc;
+    --st-border-dotted: #ccc;
+    --st-text-main: #222;
+    --st-text-title: #000;
+    --st-text-heading: #8b0000;
+    /* Dark red ink */
+    --st-text-subheading: #444;
+    --st-text-muted: #999;
+    --st-accent-color: #333;
+    --st-handle-bg: #333;
+    --st-handle-text: #fff;
+    --st-btn-bg: #333;
+    --st-btn-text: #fff;
+    --st-key-color: #000080;
+    /* Navy blue */
+    --st-value-color: #2e8b57;
+    /* Sea green */
+    --st-font-family: "Georgia", serif;
+    --st-line-height: 1.4;
+    /* More breathing room */
+}
+
+.theme-cyberpunk {
+    --st-bg-panel: #090014;
+    --st-bg-controls: #180029;
+    --st-border-main: #ff00ff;
+    --st-border-inner: #550055;
+    --st-border-dotted: #330033;
+    --st-text-main: #fff;
+    --st-text-title: #ff00ff;
+    --st-text-heading: #00ffff;
+    --st-text-subheading: #d400ff;
+    --st-text-muted: #550055;
+    --st-accent-color: #00ffff;
+    --st-handle-bg: linear-gradient(90deg, #ff00ff, #00ffff);
+    --st-handle-text: #000;
+    --st-btn-bg: #00ffff;
+    --st-btn-text: #000;
+    --st-key-color: #ff00ff;
+    --st-value-color: #00ffff;
+    --st-font-family: "Consolas", monospace;
+    --st-font-size: 12px;
+    /* Tighter styling */
+}
+
+.theme-industrial {
+    --st-bg-panel: #111;
+    --st-bg-controls: #222;
+    --st-border-main: #ffd700;
+    --st-border-inner: #555;
+    --st-border-dotted: #444;
+    --st-text-main: #ccc;
+    --st-text-title: #ffd700;
+    --st-text-heading: #fff;
+    --st-text-subheading: #ffd700;
+    --st-text-muted: #444;
+    --st-accent-color: #ffd700;
+    --st-handle-bg: repeating-linear-gradient(
+        45deg,
+        #ffd700,
+        #ffd700 10px,
+        #000 10px,
+        #000 20px
+    );
+    --st-handle-text: transparent;
+    --st-btn-bg: #ffd700;
+    --st-btn-text: #000;
+    --st-key-color: #fff;
+    --st-value-color: #ffd700;
+    --st-font-family: Arial, sans-serif;
+    /* Clean sans-serif for industrial look */
+    --st-font-size: 13px;
+}
+
+.theme-forest {
+    --st-bg-panel: #2e3b2e;
+    --st-bg-controls: #1e261e;
+    --st-border-main: #66bb6a;
+    --st-border-inner: #4e604e;
+    --st-border-dotted: #445544;
+    --st-text-main: #e8f5e9;
+    --st-text-title: #81c784;
+    --st-text-heading: #a5d6a7;
+    --st-text-subheading: #aed581;
+    --st-text-muted: #556b55;
+    --st-accent-color: #66bb6a;
+    --st-handle-bg: #66bb6a;
+    --st-handle-text: #1b2e1b;
+    --st-btn-bg: #81c784;
+    --st-btn-text: #1b2e1b;
+    --st-key-color: #c8e6c9;
+    --st-value-color: #ffcc80;
+    --st-font-family: monospace;
+}
+
+.theme-blueprint {
+    --st-bg-panel: #2a4b8d;
+    --st-bg-controls: #203a6e;
+    --st-border-main: #ffffff;
+    --st-border-inner: rgba(255, 255, 255, 0.3);
+    --st-border-dotted: rgba(255, 255, 255, 0.1);
+    --st-border-dashed: #ffffff;
+    --st-text-main: #ffffff;
+    --st-text-title: #fff;
+    --st-text-heading: #ffdd00;
+    --st-text-subheading: #cceeff;
+    --st-text-muted: rgba(255, 255, 255, 0.5);
+    --st-accent-color: #fff;
+    --st-handle-bg: #fff;
+    --st-handle-text: #2a4b8d;
+    --st-btn-bg: transparent;
+    --st-btn-text: #fff;
+    --st-key-color: #88ccff;
+    --st-value-color: #fff;
+    --st-font-family: "Courier", monospace;
+    /* Extra: Button Border override */
+}
+
+.theme-ocean {
+    --st-bg-panel: #0f172a;
+    --st-bg-controls: #1e293b;
+    --st-border-main: #38bdf8;
+    --st-border-inner: #334155;
+    --st-border-dotted: #1e293b;
+    --st-text-main: #e2e8f0;
+    --st-text-title: #38bdf8;
+    --st-text-heading: #2dd4bf;
+    --st-text-subheading: #94a3b8;
+    --st-text-muted: #475569;
+    --st-accent-color: #7dd3fc;
+    --st-handle-bg: #38bdf8;
+    --st-handle-text: #0f172a;
+    --st-btn-bg: #0ea5e9;
+    --st-btn-text: #fff;
+    --st-key-color: #2dd4bf;
+    --st-value-color: #a78bfa;
+    --st-font-family: monospace;
+}
+
+.theme-amber {
+    --st-bg-panel: #121212;
+    --st-bg-controls: #000000;
+    --st-border-main: #ffb000;
+    --st-border-inner: #996900;
+    --st-border-dotted: #332200;
+    --st-text-main: #ffb000;
+    --st-text-title: #ffb000;
+    --st-text-heading: #ffb000;
+    --st-text-subheading: #cc8f00;
+    --st-text-muted: #664400;
+    --st-accent-color: #ffb000;
+    --st-handle-bg: #ffb000;
+    --st-handle-text: #000;
+    --st-btn-bg: #ffb000;
+    --st-btn-text: #000;
+    --st-key-color: #ffb000;
+    --st-value-color: #fff;
+    /* Slight white for values to read easier */
+    --st-font-family: "Courier New", Courier, monospace;
+    --st-font-size: 15px;
+    /* Slightly larger for retro feel */
+    letter-spacing: 1px;
+}
+
+.theme-dracula {
+    --st-bg-panel: #282a36;
+    --st-bg-controls: #44475a;
+    --st-border-main: #bd93f9;
+    --st-border-inner: #6272a4;
+    --st-border-dotted: #44475a;
+    --st-text-main: #f8f8f2;
+    --st-text-title: #50fa7b;
+    --st-text-heading: #ff79c6;
+    --st-text-subheading: #8be9fd;
+    --st-text-muted: #6272a4;
+    --st-accent-color: #bd93f9;
+    --st-handle-bg: #bd93f9;
+    --st-handle-text: #282a36;
+    --st-btn-bg: #ff5555;
+    --st-btn-text: #282a36;
+    --st-key-color: #8be9fd;
+    --st-value-color: #f1fa8c;
+    --st-font-family: "Fira Code", monospace;
+}
+
+.theme-github-light {
+    --st-bg-panel: #ffffff;
+    --st-bg-controls: #f6f8fa;
+    --st-border-main: #d0d7de;
+    --st-border-inner: #d0d7de;
+    --st-border-dotted: #eaeef2;
+    --st-border-dashed: #d0d7de;
+    --st-text-main: #24292f;
+    --st-text-title: #0969da;
+    --st-text-heading: #cf222e;
+    --st-text-subheading: #57606a;
+    --st-text-muted: #57606a;
+    --st-accent-color: #fd8c73;
+    /* Orange accent */
+    --st-handle-bg: #0969da;
+    --st-handle-text: #fff;
+    --st-btn-bg: #f6f8fa;
+    /* Outline button style */
+    --st-btn-text: #24292f;
+    --st-key-color: #0550ae;
+    --st-value-color: #0969da;
+    --st-font-family:
+        -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial,
+        sans-serif;
+}
+
+.theme-github-dark {
+    --st-bg-panel: #0d1117;
+    --st-bg-controls: #161b22;
+    --st-border-main: #30363d;
+    --st-border-inner: #30363d;
+    --st-border-dotted: #30363d;
+    --st-border-dashed: #30363d;
+    --st-text-main: #c9d1d9;
+    --st-text-title: #58a6ff;
+    --st-text-heading: #f9826c;
+    --st-text-subheading: #8b949e;
+    --st-text-muted: #8b949e;
+    --st-accent-color: #f9826c;
+    --st-handle-bg: #58a6ff;
+    --st-handle-text: #0d1117;
+    --st-btn-bg: #161b22;
+    --st-btn-text: #c9d1d9;
+    --st-key-color: #58a6ff;
+    --st-value-color: #f9826c;
+    --st-font-family:
+        -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial,
+        sans-serif;
+}
+/* Specific override for this light theme button border */
+.theme-github-light .debug-controls button {
+    border: 1px solid #d0d7de;
+}
+
+.theme-blueprint .debug-controls button {
+    border: 1px solid #fff;
+}
+
+.debug-panel {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 30px;
+    /* Minimized height */
+    z-index: 99999;
+    display: flex;
+    flex-direction: column;
+    transition:
+        height 0.3s ease-in-out,
+        transform 0.3s ease-in-out;
+    overflow: hidden;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.5);
+
+    /* Themed Properties */
+    background-color: var(--st-bg-panel);
+    color: var(--st-text-main);
+    border-top: 2px solid var(--st-border-main);
+    font-family: var(--st-font-family);
+    font-size: var(--st-font-size);
+    line-height: var(--st-line-height);
+}
+
+.debug-panel-hidden {
+    height: 30px !important;
+}
+
+.debug-handle {
+    height: 6px;
+    cursor: ns-resize;
+    text-align: center;
+    line-height: 5px;
+    font-size: 8px;
+    user-select: none;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 2;
+
+    /* Themed Properties */
+    background-color: var(--st-handle-bg);
+    color: var(--st-handle-text);
+}
+
+.debug-controls {
+    padding: 5px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 25px;
+    box-sizing: border-box;
+    margin-top: 5px;
+    position: relative;
+    z-index: 1;
+
+    /* Themed Properties */
+    background-color: var(--st-bg-controls);
+    border-bottom: 1px solid var(--st-border-main);
+}
+
+.debug-title {
+    font-weight: bold;
+    color: var(--st-text-title);
+}
+
+.debug-controls button {
+    border: none;
+    padding: 2px 8px;
+    cursor: pointer;
+    font-family: inherit;
+    font-weight: bold;
+    border-radius: 2px;
+
+    /* Themed Properties */
+    background-color: var(--st-btn-bg);
+    color: var(--st-btn-text);
+}
+
+.debug-content {
+    flex-grow: 1;
+    padding: 10px;
+    overflow-y: auto;
+    position: relative;
+    scrollbar-color: var(--st-border-main) var(--st-bg-scrollbar);
+    /* Firefox support */
+}
+
+.tab-content h3 {
+    margin-top: 0;
+    font-size: 1.1em;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+
+    /* Themed Properties */
+    color: var(--st-text-heading);
+    border-bottom: 1px dashed var(--st-border-dashed);
+}
+
+.tab-content h4 {
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-size: 1em;
+    color: var(--st-text-subheading);
+}
+
+.debug-tabs {
+    margin-bottom: 10px;
+    padding-bottom: 0;
+    white-space: nowrap;
+    overflow-x: auto;
+
+    /* Themed Properties */
+    border-bottom: 1px solid var(--st-border-inner);
+}
+
+.tab-button {
+    background: none;
+    border: none;
+    padding: 5px 10px;
+    margin-right: 5px;
+    cursor: pointer;
+    transition: color 0.2s;
+    font-family: inherit;
+
+    /* Themed Properties */
+    color: var(--st-text-muted);
+}
+
+.tab-button.active {
+    padding-bottom: 3px;
+    font-weight: bold;
+
+    /* Themed Properties */
+    color: var(--st-accent-color);
+    border-bottom: 2px solid var(--st-accent-color);
+}
+
+.tab-content {
+    display: none;
+    overflow-x: auto;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.debug-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 15px 0;
+    font-size: 0.9em;
+}
+
+.debug-list li {
+    padding: 2px 0;
+    display: flex;
+    justify-content: space-between;
+
+    /* Themed Properties */
+    border-bottom: 1px dotted var(--st-border-dotted);
+}
+
+.debug-list .log-debug {
+    display: block;
+}
+
+.debug-list li:last-child {
+    border-bottom: none;
+}
+
+.list-key {
+    font-weight: bold;
+    flex-shrink: 0;
+    padding-right: 10px;
+    color: var(--st-key-color);
+}
+
+.list-value {
+    text-align: right;
+    word-break: break-all;
+    color: var(--st-value-color);
+}
+
+.note {
+    font-size: 0.8em;
+    color: var(--st-note-color);
+}
+
+/* JsEvents */
+.js-event-meta-container {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    align-items: center;
+    font-size: 0.8em;
+
+    /* Themed Properties */
+    background: var(--st-js-bg);
+    border-right: 1px solid var(--st-border-main);
+}
+
+.js-event-meta-container .js-event {
+    font-weight: bold;
+    color: var(--st-js-event);
+}
+
+.js-event-meta-container .js-event-meta-element {
+    font-weight: bold;
+    color: var(--st-js-element);
+}
+
+.js-event-meta-container .js-event-meta-type {
+    padding: 5px;
+    color: var(--st-js-type);
+}

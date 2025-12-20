@@ -1,93 +1,281 @@
-# snailtrail
+# 🐌 Snail Trail Debugger
+
+A lightweight, comprehensive debug panel for static sites built with Jekyll, Eleventy, Hugo, and other static site generators. Inspired by Laravel's debug bar, Snail Trail provides real-time performance metrics, **resource** analysis, and development insights—all accessible via a sleek pull-up panel.
+
+![License](https://img.shields.io/badge/license-MIT-blue.svg)
+![JavaScript](https://img.shields.io/badge/JavaScript-Vanilla-yellow.svg)
+![Size](https://img.shields.io/badge/size-~15KB-green.svg)
+
+## 🟫 Features
+
+- **Performance Monitoring** - ***TTFB***, ***FCP***, ***LCP***, ***Resource Timing***
+- **Resource Analysis** - Track scripts, ***`stylesheets`***, ***`images`*** with sizes and load times
+- **Environment Info** - ***`Viewport`***, ***`user agent`***, ***`connection type`***, ***`color scheme`***
+- **JavaScript State** - `LocalStorage`, `SessionStorage`, `cookies`, event `listeners`
+- **DOM Analysis** - Node count, depth, accessibility checks (missing alt tags)
+- **Console Interception** - Capture and display console messages within the panel
+- **Build Information** - Display build timestamps, git hashes, environment
+- **Keyboard Shortcut** - Toggle with `Ctrl+Shift+D`
+- **Mobile Friendly** - Debug on any device without DevTools
+- **Customizable** - Drag to resize, persistent state
+- **[logcad](https://gitlab.com/staticcanvas/esmutils/libs/generic/logcad.mjs) intergration**, catches dispatched log messages from `logd`
+- **Simple usage:** `localstorage` variable, window `__BUILD_TIMESTAMP__`, `__BUILD_HASH__`, `__BUILD_ENV__`
+- **UI memory**: Remember UI state: `open`, `close`, `height`
+
+## 🟫 Quick Start
+
+### 🎮 Keyboard Shortcuts
+
+- `Ctrl+Shift+D` - Toggle debug panel visibility
+
+### 🛠️ Installation
+
+🔘 **`Option 1:` Direct Include auto load**
+ 1. Link script file local or from cdn:
+     ```html
+     <!-- Add before closing </body> tag -->
+     <script src="path/to/snailtrail-debugger.js"></script>
+     <!-or->
+     // PENDING <-------
+     ```
+ 2. Basic Usage Vanilla JS, just set the localstorage varriable `__snail_debug` to `true`;
+
+     ```javascript
+     // In browser console or your script set `__snail_debug` to `true`
+     localStorage.__snail_debug = 'true';
+     // if you've linked debugger.js as standard script, it will auto run initialization automatically
+     // can always set a button to do this
+     // Looks for
+     // - `__snail_debug` in LocalStorage
+     // - `__BUILD_TIMESTAMP__`, `__BUILD_HASH__`, `__BUILD_ENV__` in window
+     ```
+
+🔘 **`Option 2:` NPM | Module ( `type="module"` )** 
+ 1. Install snail trail debugger
+     ```bash
+     npm install snailtrail-debugger
+     ```
+ 2. Import requred functions 
+
+     ```javascript
+     import { SnailTrailDebugger, initSnailTrailDebugger } from 'snailtrail-debugger';
+     ```
+
+ 3.  Modern Usage with ES6
+   **Enable the debugger:**
+      ```javascript
+      // In browser console or your script set `__snail_debug` to `true`
+      // Initialize the debugger
+      const SnailTrailDebugger = new SnailTrailDebugger({
+        storageKey: '__snail_debug'
+        parnelId: 'debug-panel'
+        buildInfo: {
+          timestamp: '2024-11-14 10:30:00',
+          hash: 'abc123def456',
+          env: 'production'
+        }
+      });
+      // call init function to setup event listners
+      initSnailTrailDebugger();
+      ```
 
 
+## 🟫 Static Site Generator Integration
 
-## Getting started
+### 🔸 Jekyll
 
-To make it easy for you to get started with GitLab, here's a list of recommended next steps.
+```html
+<!-- _includes/debug.html -->
+<script>
+  window.__BUILD_TIMESTAMP__ = '{{ site.time | date: "%Y-%m-%d %H:%M:%S" }}';
+  window.__BUILD_HASH__ = '{{ site.github.build_revision }}';
+  window.__BUILD_ENV__ = '{{ jekyll.environment }}';
+</script>
+<script src="{{ '/assets/js/snail-trail-debugger.js' | relative_url }}"></script>
 
-Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
-
-## Add your files
-
-- [ ] [Create](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#create-a-file) or [upload](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#upload-a-file) files
-- [ ] [Add files using the command line](https://docs.gitlab.com/topics/git/add_files/#add-files-to-a-git-repository) or push an existing Git repository with the following command:
-
+<!-- In your layout -->
+{% if jekyll.environment == "development" %}
+  {% include debug.html %}
+{% endif %}
 ```
-cd existing_repo
-git remote add origin https://gitlab.com/staticcanvas/snailtrail.git
-git branch -M main
-git push -uf origin main
+
+### 🔸 Eleventy (11ty)
+
+```javascript
+// .eleventy.js
+eleventyConfig.addShortcode("buildInfo", function() {
+  return `
+    <script>
+      window.__BUILD_TIMESTAMP__ = '${new Date().toISOString()}';
+      window.__BUILD_HASH__ = '${process.env.GIT_COMMIT || 'local'}';
+      window.__BUILD_ENV__ = '${process.env.ELEVENTY_ENV || 'development'}';
+    </script>
+  `;
+});
 ```
 
-## Integrate with your tools
+```html
+<!-- _includes/layouts/base.njk -->
+{% if env == "development" %}
+  {% buildInfo %}
+  <script src="/assets/js/snail-trail-debugger.js"></script>
+{% endif %}
+```
 
-- [ ] [Set up project integrations](https://gitlab.com/staticcanvas/snailtrail/-/settings/integrations)
+### 🔸 Hugo
 
-## Collaborate with your team
+```html
+<!-- layout🔸 s/partials/debug.html -->
+<script>
+  window.__BUILD_TIMESTAMP__ = '{{ now.Format "2006-01-02 15:04:05" }}';
+  window.__BUILD_HASH__ = '{{ getenv "GIT_COMMIT" }}';
+  window.__BUILD_ENV__ = '{{ hugo.Environment }}';
+</script>
+<script src="{{ "js/snail-trail-debugger.js" | relURL }}"></script>
 
-- [ ] [Invite team members and collaborators](https://docs.gitlab.com/ee/user/project/members/)
-- [ ] [Create a new merge request](https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html)
-- [ ] [Automatically close issues from merge requests](https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#closing-issues-automatically)
-- [ ] [Enable merge request approvals](https://docs.gitlab.com/ee/user/project/merge_requests/approvals/)
-- [ ] [Set auto-merge](https://docs.gitlab.com/user/project/merge_requests/auto_merge/)
+<!-- In your baseof.html -->
+{{ if eq hugo.Environment "development" }}
+  {{ partial "debug.html" . }}
+{{ end }}
+```
 
-## Test and Deploy
+## 🟧 Debug Panel Tabs
 
-Use the built-in continuous integration in GitLab.
+### 1. Performance
+- Page load time
+- Time to First Byte (TTFB)
+- First Contentful Paint (FCP)
+- Largest Contentful Paint (LCP)
+- DNS lookup & TCP connection times
+- Top 5 slowest resources
 
-- [ ] [Get started with GitLab CI/CD](https://docs.gitlab.com/ee/ci/quick_start/)
-- [ ] [Analyze your code for known vulnerabilities with Static Application Security Testing (SAST)](https://docs.gitlab.com/ee/user/application_security/sast/)
-- [ ] [Deploy to Kubernetes, Amazon EC2, or Amazon ECS using Auto Deploy](https://docs.gitlab.com/ee/topics/autodevops/requirements.html)
-- [ ] [Use pull-based deployments for improved Kubernetes management](https://docs.gitlab.com/ee/user/clusters/agent/)
-- [ ] [Set up protected environments](https://docs.gitlab.com/ee/ci/environments/protected_environments.html)
+### 2. Resources
+- Total page weight
+- Failed resources count
+- All loaded scripts with sizes and load times
+- All stylesheets with metrics
+- Images with dimensions and sizes
 
-***
+### 3. Environment
+- Current URL
+- User agent
+- Viewport dimensions
+- Screen resolution & pixel ratio
+- Color scheme preference (dark/light)
+- Connection type (4G, WiFi, etc.)
 
-# Editing this README
+### 4. JS State
+- LocalStorage size
+- SessionStorage size
+- Cookies (names only)
+- Active event listeners estimate
+- Real-time console log capture (last 20 messages)
 
-When you're ready to make this README your own, just edit this file and use the handy template below (or feel free to structure it however you want - this is just a starting point!). Thanks to [makeareadme.com](https://www.makeareadme.com/) for this template.
+### 5. DOM
+- Total DOM nodes
+- Maximum DOM depth
+- Iframe count
+- Forms count
+- Images without alt attributes
+- Internal vs external links
 
-## Suggestions for a good README
+### 6. Build Info
+- Build timestamp
+- Git commit hash
+- Environment (dev/staging/prod)
+- Build Environment
 
-Every project is different, so consider which of these sections apply to yours. The sections used in the template are suggestions for most open source projects. Also keep in mind that while a README can be too long and detailed, too long is better than too short. If you think your README is too long, consider utilizing another form of documentation rather than cutting out information.
 
-## Name
-Choose a self-explaining name for your project.
+## 🟫 Styling
 
-## Description
-Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be unfamiliar with. A list of Features or a Background subsection can also be added here. If there are alternatives to your project, this is a good place to list differentiating factors.
+The debugger includes minimal default styles. You can customize by targeting these classes:
 
-## Badges
-On some READMEs, you may see small images that convey metadata, such as whether or not all the tests are passing for the project. You can use Shields to add some to your README. Many services also have instructions for adding a badge.
+```css
+.debug-panel { /* Main container */ }
+.debug-handle { /* Drag handle */ }
+.debug-controls { /* Top control bar */ }
+.debug-tabs { /* Tab buttons */ }
+.debug-content { /* Content area */ }
+.tab-content { /* Individual tab panels */ }
+.debug-list { /* List items */ }
+```
 
-## Visuals
-Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
+## 🟫 API Methods
 
-## Installation
-Within a particular ecosystem, there may be a common way of installing things, such as using Yarn, NuGet, or Homebrew. However, consider the possibility that whoever is reading your README is a novice and would like more guidance. Listing specific steps helps remove ambiguity and gets people to using your project as quickly as possible. If it only runs in a specific context like a particular programming language version or operating system or has dependencies that have to be installed manually, also add a Requirements subsection.
+```javascript
+// Refresh all data
+window.snailDebugger.refresh();
 
-## Usage
-Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
+// Destroy and remove panel
+window.snailDebugger.destroy();
 
-## Support
-Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
+// Access console log programmatically
+console.log(window.snailDebugger.consoleLog);
+```
 
-## Roadmap
-If you have ideas for releases in the future, it is a good idea to list them in the README.
+## 🤝 Use Cases
 
-## Contributing
-State if you are open to contributions and what your requirements are for accepting them.
+- **Local Development** - Monitor performance during development
+- **Client Demos** - Show technical metrics to stakeholders
+- **Mobile Testing** - Debug without remote DevTools
+- **Performance Audits** - Quick performance overview
+- **Accessibility Checks** - Find images missing alt attributes
+- **Build Verification** - Confirm correct build artifacts deployed
 
-For people who want to make changes to your project, it's helpful to have some documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.
+## 📝 Best Practices
 
-You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
+1. **Only enable in development** - Use environment checks in your templates
+2. **Inject build info** - Makes debugging production issues easier
+3. **Use keyboard shortcut** - Quick toggle without scrolling
+4. **Monitor console tab** - Catch JavaScript errors early
+5. **Check failed resources** - Identify broken asset links
 
-## Authors and acknowledgment
-Show your appreciation to those who have contributed to the project.
+## 🔒 Security Note
 
-## License
-For open source projects, say how it is licensed.
+The debugger only collects **client-side data** that's already accessible through the browser. It does not:
+- Send data to external servers
+- Access sensitive cookie values
+- Expose server-side information
+- Store data beyond LocalStorage
 
-## Project status
-If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
+However, **always disable in production** unless needed for specific debugging scenarios.
+
+## 🐛 Troubleshooting
+
+**Panel doesn't appear:**
+- Check `localStorage.__snail_debug` is set to `'true'` (string, not boolean)
+- Ensure script is loaded after DOM is ready
+- Check browser console for JavaScript errors
+
+**Build info shows "Not configured":**
+- Verify build variables are being injected
+- Check `window.__BUILD_TIMESTAMP__` etc. are defined before debugger initializes
+
+**Performance metrics show N/A:**
+- Some metrics require HTTPS (like connection type)
+- LCP requires user interaction on some browsers
+- Wait for full page load before checking
+
+## 📄 License
+
+MIT License - feel free to use in personal and commercial projects.
+
+## 🙏 Acknowledgments
+
+- Laravel Debug Bar by **Taylor Otwell**
+- Symfony Web Debug Toolbar by **Fabien Potencier**
+- Browser DevTools by **Google**
+
+## 🌟 Contributing
+
+Contributions welcome! Please feel free to submit a Pull Request.
+
+## 📬 Support
+
+- 🐛 [Report a bug](https://github.com/yourusername/snail-trail-debugger/issues)
+- 💡 [Request a feature](https://github.com/yourusername/snail-trail-debugger/issues)
+- 📖 [Documentation](https://github.com/yourusername/snail-trail-debugger/wiki)
+
+---
+
+Made with 🐌 and ☕ for the static site community

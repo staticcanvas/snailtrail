@@ -1,8 +1,8 @@
 /node_modules
 /dist
 .npmrc
-/examples/*.js
-/examples/*.map
+/example/*.js
+/example/*.map
 
 # Ignore environment variable files
 *.env

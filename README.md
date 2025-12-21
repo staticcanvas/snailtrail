@@ -1,5 +1,6 @@
-# 🐌 SnailTrail Debugger
-<img src="https://raw.githubusercontent.com/staticcanvas/general-resources/main/logos/logcad/dist/png/logcad-128x128.png" width="64" > **SnailTrail Debugger**( Simple Debug Panel for Static Sites )
+# <img src="https://raw.githubusercontent.com/staticcanvas/general-resources/main/logos/snailtrail/dist/png/snailtrail-128x128.png" width="32" > **SnailTrail**  Debugger
+
+> Simple Debug Panel for Static Sites
 
 A lightweight, comprehensive debug panel for static sites built with Jekyll, Eleventy, Hugo, and other static site generators. Inspired by Laravel's debug bar, Snail Trail provides real-time performance metrics, **resource** analysis, and development insights—all accessible via a sleek pull-up panel.
 

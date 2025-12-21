@@ -26,6 +26,8 @@ A lightweight, comprehensive debug panel for static sites built with Jekyll, Ele
 
 ### 🎮 Keyboard Shortcuts
 
+[![jsr](https://img.shields.io/jsr/v/%40staticcanvas/logcad?style=for-the-badge&logo=jsr&labelColor=00ffff&color=0000af)](https://jsr.io/@staticcanvas/logcad)
+
 - `Ctrl+Shift+D` - Toggle debug panel visibility
 
 ### 🛠️ Installation

@@ -4,6 +4,8 @@
  * Activated via localStorage._debug = 'true'
  */
 
+import { logd } from "https://cdn.jsdelivr.net/gh/staticcanvas/logcad@0.4.23/dist/logcad.esm.js";
+
 class SnailTrailDebugger {
     constructor(options = {}) {
         this.options = {
@@ -372,7 +374,7 @@ class SnailTrailDebugger {
 
     collectPerformanceData() {
         const perf = performance.timing;
-        const nav = performance.getEntriesByType("navigation")[0];
+        // const nav = performance.getEntriesByType("navigation")[0];
 
         // Page load time
         const loadTime = perf.loadEventEnd - perf.navigationStart;
@@ -433,7 +435,7 @@ class SnailTrailDebugger {
             po.observe({ entryTypes: ["largest-contentful-paint"] });
             this.performanceObserver = po;
         } catch (e) {
-            this.setContent("perf-lcp", "Not supported");
+            this.setContent("perf-lcp", `Not supported ${e.message}`);
         }
     }
 
@@ -536,8 +538,8 @@ class SnailTrailDebugger {
     collectJSStateData() {
         // LocalStorage size
         let lsSize = 0;
-        for (let key in localStorage) {
-            if (localStorage.hasOwnProperty(key)) {
+        for (const key in localStorage) {
+            if (Object.hasOwn(localStorage, key)) {
                 lsSize += localStorage[key].length + key.length;
             }
         }
@@ -545,8 +547,8 @@ class SnailTrailDebugger {
 
         // SessionStorage size
         let ssSize = 0;
-        for (let key in sessionStorage) {
-            if (sessionStorage.hasOwnProperty(key)) {
+        for (const key in sessionStorage) {
+            if (Object.hasOwn(sessionStorage, key) && sessionStorage) {
                 ssSize += sessionStorage[key].length + key.length;
             }
         }

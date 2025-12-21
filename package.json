@@ -48,7 +48,7 @@
     "lint": "eslint src/**/*.js",
     "lint:fix": "eslint src/**/*.js --fix",
     "update:npm": "npm install -g npm@latest",
-    "serve:example": "npm run build && http-server examples -p 8080",
+    "serve:example": "npm run build cp dist/snailtrail.js example/snailtrail.js && cp dist/snailtrail.js.map example/snailtrail.js.map && http-server examples -p 8080",
     "publish:npm": "npm run lint:fix && npm run build && cd dist/snailtrail && echo //registry.npmjs.org/:_authToken=${NPM_API_KEY} > .npmrc && npm publish --access public",
     "publish:jsr": "npm run lint:fix && npm run build && cd dist/snailtrail && npx jsr publish --allow-dirty"
   },

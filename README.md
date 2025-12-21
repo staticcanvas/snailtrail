@@ -1,10 +1,13 @@
-# 🐌 Snail Trail Debugger
+# 🐌 SnailTrail Debugger
+<img src="https://raw.githubusercontent.com/staticcanvas/general-resources/main/logos/logcad/dist/png/logcad-128x128.png" width="64" > **SnailTrail Debugger**( Simple Debug Panel for Static Sites )
 
 A lightweight, comprehensive debug panel for static sites built with Jekyll, Eleventy, Hugo, and other static site generators. Inspired by Laravel's debug bar, Snail Trail provides real-time performance metrics, **resource** analysis, and development insights—all accessible via a sleek pull-up panel.
 
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 ![JavaScript](https://img.shields.io/badge/JavaScript-Vanilla-yellow.svg)
 ![Size](https://img.shields.io/badge/size-~15KB-green.svg)
+
+[![gitlab](https://img.shields.io/gitlab/license/staticcanvas/snailtrail?style=for-the-badge&logo=gitlab&labelColor=ff5f00&color=5fffff&logoColor=0000af)](https://gitlab.com/staticcanvas) [![gitlab](https://img.shields.io/gitlab/pipeline-status/staticcanvas/snailtrail?style=for-the-badge&logo=gitlab&labelColor=ff5f00&color=5fffff&logoColor=0000af)](https://gitlab.com/staticcanvas) [![gitlab](https://img.shields.io/gitlab/issues/open/staticcanvas/snailtrail?style=for-the-badge&logo=gitlab&labelColor=ff5f00&color=5fffff&logoColor=0000af)](https://gitlab.com/staticcanvas) [![npm](https://img.shields.io/npm/v/snailtrail?style=for-the-badge&logo=npm&labelColor=ff5f00&color=5fffff&logoColor=0000af)](https://www.npmjs.com/package/snailtrail) [![jsr](https://img.shields.io/jsr/v/%40staticcanvas/snailtrail?style=for-the-badge&logo=jsr&labelColor=ff5f00&color=5fffff&logoColor=0000af)](https://jsr.io/%40staticcanvas/snailtrail) [![jsdelivr](https://img.shields.io/jsdelivr/npm/hw/snailtrail?style=for-the-badge&logo=jsdelivr&labelColor=ff5f00&color=5fffff&logoColor=0000af)](https://cdn.jsdelivr.net/package/npm/snailtrail) [![npm](https://img.shields.io/npm/v/snailtrail?style=for-the-badge&logo=npm&labelColor=ff5f00&color=5fffff&logoColor=0000af)](https://www.npmjs.com/package/snailtrail)
 
 ## 🟫 Features
 
@@ -26,7 +29,7 @@ A lightweight, comprehensive debug panel for static sites built with Jekyll, Ele
 
 ### 🎮 Keyboard Shortcuts
 
-[![jsr](https://img.shields.io/jsr/v/%40staticcanvas/logcad?style=for-the-badge&logo=jsr&labelColor=00ffff&color=0000af)](https://jsr.io/@staticcanvas/logcad)
+[![jsr](https://img.shields.io/jsr/v/%40staticcanvas/logcad?style=flat-square&logo=jsr&labelColor=00ffff&color=0000af)](https://jsr.io/%40staticcanvas/)
 
 - `Ctrl+Shift+D` - Toggle debug panel visibility
 

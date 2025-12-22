@@ -2,7 +2,7 @@
 
 > Simple Debug Panel for Static Sites
 
-A lightweight, comprehensive debug panel for static sites built with Jekyll, Eleventy, Hugo, and other static site generators. Inspired by Laravel's debug bar, Snail Trail provides real-time performance metrics, **resource** analysis, and development insights—all accessible via a sleek pull-up panel.
+A lightweight debug panel for static sites built with Jekyll, Eleventy, Hugo, and other static site generators. Inspired by Laravel's debug bar, Snail Trail provides real-time performance metrics, **resource** analysis, and development insights—all accessible via a sleek pull-up panel.
 
 ## 🟫 Features
 

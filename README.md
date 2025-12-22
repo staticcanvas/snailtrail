@@ -2,7 +2,7 @@
 
 > Simple Debug Panel for Static Sites
 
-A lightweight, comprehensive debug panel for static sites built with Jekyll, Eleventy, Hugo, and other static site generators. Inspired by Laravel's debug bar, Snail Trail provides real-time performance metrics, **resource** analysis, and development insights—all accessible via a sleek pull-up panel.
+A lightweight debug panel for static sites built for Jekyll, Eleventy, Hugo, and other static site generators. Inspired by Laravel's debug bar, Snail Trail provides real-time performance metrics, **resource** analysis, and development insights—all accessible via a sleek pull-up panel.
 
 
 [![gitlab-license](https://img.shields.io/gitlab/license/staticcanvas/snailtrail?style=flat-square&logo=gitlab&labelColor=000000&color=8700d7&logoColor=ff00ff)](https://gitlab.com/staticcanvas) [![gitlab-pipeline](https://img.shields.io/gitlab/pipeline-status/staticcanvas/snailtrail?style=flat-square&logo=gitlab&labelColor=000000&color=8700d7&logoColor=ff00ff)](https://gitlab.com/staticcanvas) [![gitlab-issues](https://img.shields.io/gitlab/issues/open/staticcanvas/snailtrail?style=flat-square&logo=gitlab&labelColor=000000&color=8700d7&logoColor=ff00ff)](https://gitlab.com/staticcanvas) [![npm-version](https://img.shields.io/npm/v/@staticcanvas/snailtrail?style=flat-square&logo=npm&labelColor=000000&color=8700d7&logoColor=ff00ff)](https://www.npmjs.com/package/snailtrail) [![jsr-version](https://img.shields.io/jsr/v/%40staticcanvas/snailtrail?style=flat-square&logo=jsr&labelColor=000000&color=8700d7&logoColor=ff00ff)](https://jsr.io/%40staticcanvas/snailtrail) [![jsdelivr-hitsperweek](https://img.shields.io/jsdelivr/npm/hw/@staticcanvas/snailtrail?style=flat-square&logo=jsdelivr&labelColor=000000&color=8700d7&logoColor=ff00ff)](https://cdn.jsdelivr.net/package/npm/snailtrail) [![unpkg-version](https://img.shields.io/npm/v/@staticcanvas/snailtrail?style=flat-square&logo=unpkg&label=unpkg&labelColor=000000&color=8700d7&logoColor=ff00ff)](https://www.npmjs.com/package/snailtrail) [![npm-sizeMin](https://img.shields.io/bundlephobia/min/@staticcanvas/snailtrail?style=flat-square&logo=npm&labelColor=000000&color=8700d7&logoColor=ff00ff)](https://www.npmjs.com/package/snailtrail) [![npm-sizeZipped](https://img.shields.io/bundlephobia/minzip/@staticcanvas/snailtrail?style=flat-square&logo=npm&labelColor=000000&color=8700d7&logoColor=ff00ff)](https://www.npmjs.com/package/snailtrail)
@@ -52,10 +52,12 @@ A lightweight, comprehensive debug panel for static sites built with Jekyll, Ele
      // - `__BUILD_TIMESTAMP__`, `__BUILD_HASH__`, `__BUILD_ENV__` in window
      ```
 
-🔘 **`Option 2:` NPM | Module ( `type="module"` )** 
+🔘 **`Option 2:` ES Module ( `type="module"` )** 
  1. Install snail trail debugger
      ```bash
-     npm install snailtrail-debugger
+     npm install snailtrail-debugger # use npm
+     # or via cdn: jsdelivr
+     <script src="https://cdn.jsdelivr.net/npm/snailtrail-debugger@latest/dist/snailtrail.js"></script>
      ```
  2. Import requred functions 
 

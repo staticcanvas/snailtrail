@@ -15,17 +15,27 @@
                 margin-top: 50px;
             }
         </style>
-        <script src="https://cdn.jsdelivr.net/npm/@staticcanvas/logcad@0.4.10/dist/logcad.min.js"></script> 
-        <link rel="stylesheet" href="../css/default.css" />
+        
+        <!-- Logcad from JsDelivr CDN -->
+        <script src="https://cdn.jsdelivr.net/npm/@staticcanvas/logcad@0.4.10/dist/logcad.min.js"></script>
+
+        <!-- Logcad from ESM JsDelivr -->
+        {# <script type="module">
+            import * as logcad from 'https://cdn.jsdelivr.net/npm/@staticcanvas/logcad@0.4.10/+esm'
+        </script> #}
+
+        <link rel="stylesheet" href="default.css" />
+
         <script type="module">
             // import * as logcad from 'https://cdn.jsdelivr.net/npm/@staticcanvas/logcad@0.4.10/+esm'
             // console.log(logcad)
             // logd ({ name: 'logd' }, 'action', 'message')
             import { SnailTrailDebugger, initSnailTrailDebugger } from "./snailtrail.esm.js";
-            window.__BUILD_TIMESTAMP = "Thurs, 14 Nov 2024 10:30:00 GMT";
-            window.__BUILD_HASH = "abc123def456";
-            window.__BUILD_ENV = "production";
-            localStorage.__snail_debug = "true";
+            // window.__BUILD_TIMESTAMP = "Thurs, 14 Nov 2024 10:30:00 GMT";
+            // window.__BUILD_HASH = "abc123def456";
+            // window.__BUILD_ENV = "production";
+            // localStorage.__snail_debug = "true";
+
             const snailTrailDebugger = new SnailTrailDebugger({
                 buildInfo: {
                     version: "0.1.0",

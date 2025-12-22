@@ -1,6 +1,8 @@
-# 🐌 Snail Trail Debugger
+# <img src="https://raw.githubusercontent.com/staticcanvas/general-resources/main/logos/snailtrail/dist/png/snailtrail-128x128.png" width="32" > **SnailTrail**  Debugger
 
-A lightweight, comprehensive debug panel for static sites built with Jekyll, Eleventy, Hugo, and other static site generators. Inspired by Laravel's debug bar, Snail Trail provides real-time performance metrics, **resource** analysis, and development insights—all accessible via a sleek pull-up panel.
+> Simple Debug Panel for Static Sites
+
+A lightweight debug panel for static sites built with Jekyll, Eleventy, Hugo, and other static site generators. Inspired by Laravel's debug bar, Snail Trail provides real-time performance metrics, **resource** analysis, and development insights—all accessible via a sleek pull-up panel.
 
 ## 🟫 Features
 
@@ -209,19 +211,3 @@ However, **always disable in production** unless needed for specific debugging s
 ## License
 
 MIT License - feel free to use in personal and commercial projects.
-
-## 🙏 Acknowledgments
-
-- Laravel Debug Bar by **Taylor Otwell**
-- Symfony Web Debug Toolbar by **Fabien Potencier**
-- Browser DevTools by **Google**
-
-## Contributing
-
-Contributions welcome! Please feel free to submit a Pull Request.
-
-## Support
-
-- 🐛 [Report a bug](https://github.com/yourusername/snail-trail-debugger/issues)
-- 💡 [Request a feature](https://github.com/yourusername/snail-trail-debugger/issues)
-- 📖 [Documentation](https://github.com/yourusername/snail-trail-debugger/wiki)

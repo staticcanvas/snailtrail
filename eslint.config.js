@@ -27,6 +27,10 @@ export default [
                 Set: 'readonly',
                 JSON: 'readonly',
                 Math: 'readonly',
+                //... NOTE REMOVE IF NOT USING LOGCAD 
+                //    used to ingore packages from cdns or exluded libs
+                logd: 'readonly', 
+                //...............................................
                 ...globals.browser,
                 ...globals.node
             },

@@ -1,0 +1,20 @@
+{
+    "compilerOptions": {
+        "target": "ESNext",
+        "module": "ESNext",
+        "lib": [
+            "ESNext",
+            "DOM"
+        ],
+        "allowJs": true, // Tell it to look at .js files
+        "checkJs": false, // Don't error out on your JS code
+        "declaration": true, // This tells it to generate .d.ts files
+        "emitDeclarationOnly": true,
+        "outDir": "dist",
+        "declarationDir": "dist/types",
+        "strict": false
+    },
+    "include": [
+        "src/**/*"
+    ]
+}

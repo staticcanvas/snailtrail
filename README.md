@@ -1,16 +1,13 @@
-# <img src="https://raw.githubusercontent.com/staticcanvas/general-resources/main/logos/snailtrail/dist/png/snailtrail-128x128.png" width="32" > **SnailTrail**  Debugger
+# <img src="https://raw.githubusercontent.com/staticcanvas/general-resources/main/logos/snailtrail/dist/png/snailtrail-128x128.png" width="32" > **SnailTrail**  Debug bar
 
 > Simple Debug Panel for Static Sites
 
-A lightweight, comprehensive debug panel for static sites built with Jekyll, Eleventy, Hugo, and other static site generators. Inspired by Laravel's debug bar, Snail Trail provides real-time performance metrics, **resource** analysis, and development insights—all accessible via a sleek pull-up panel.
+A lightweight debug panel for static sites built for Jekyll, Eleventy, Hugo, and other static site generators. Inspired by Laravel's debug bar, Snail Trail provides real-time performance metrics, **resource** analysis, and development insights—all accessible via a sleek pull-up panel.
 
-![License](https://img.shields.io/badge/license-MIT-blue.svg)
-![JavaScript](https://img.shields.io/badge/JavaScript-Vanilla-yellow.svg)
-![Size](https://img.shields.io/badge/size-~15KB-green.svg)
 
-[![gitlab](https://img.shields.io/gitlab/license/staticcanvas/snailtrail?style=for-the-badge&logo=gitlab&labelColor=ff5f00&color=5fffff&logoColor=0000af)](https://gitlab.com/staticcanvas) [![gitlab](https://img.shields.io/gitlab/pipeline-status/staticcanvas/snailtrail?style=for-the-badge&logo=gitlab&labelColor=ff5f00&color=5fffff&logoColor=0000af)](https://gitlab.com/staticcanvas) [![gitlab](https://img.shields.io/gitlab/issues/open/staticcanvas/snailtrail?style=for-the-badge&logo=gitlab&labelColor=ff5f00&color=5fffff&logoColor=0000af)](https://gitlab.com/staticcanvas) [![npm](https://img.shields.io/npm/v/snailtrail?style=for-the-badge&logo=npm&labelColor=ff5f00&color=5fffff&logoColor=0000af)](https://www.npmjs.com/package/snailtrail) [![jsr](https://img.shields.io/jsr/v/%40staticcanvas/snailtrail?style=for-the-badge&logo=jsr&labelColor=ff5f00&color=5fffff&logoColor=0000af)](https://jsr.io/%40staticcanvas/snailtrail) [![jsdelivr](https://img.shields.io/jsdelivr/npm/hw/snailtrail?style=for-the-badge&logo=jsdelivr&labelColor=ff5f00&color=5fffff&logoColor=0000af)](https://cdn.jsdelivr.net/package/npm/snailtrail) [![npm](https://img.shields.io/npm/v/snailtrail?style=for-the-badge&logo=npm&labelColor=ff5f00&color=5fffff&logoColor=0000af)](https://www.npmjs.com/package/snailtrail)
+[![gitlab-license](https://img.shields.io/gitlab/license/staticcanvas/snailtrail?style=flat-square&logo=gitlab&labelColor=000000&color=8700d7&logoColor=ff00ff)](https://gitlab.com/staticcanvas) [![gitlab-pipeline](https://img.shields.io/gitlab/pipeline-status/staticcanvas/snailtrail?style=flat-square&logo=gitlab&labelColor=000000&color=8700d7&logoColor=ff00ff)](https://gitlab.com/staticcanvas) [![gitlab-issues](https://img.shields.io/gitlab/issues/open/staticcanvas/snailtrail?style=flat-square&logo=gitlab&labelColor=000000&color=8700d7&logoColor=ff00ff)](https://gitlab.com/staticcanvas) [![npm-version](https://img.shields.io/npm/v/@staticcanvas/snailtrail?style=flat-square&logo=npm&labelColor=000000&color=8700d7&logoColor=ff00ff)](https://www.npmjs.com/package/snailtrail) [![jsr-version](https://img.shields.io/jsr/v/%40staticcanvas/snailtrail?style=flat-square&logo=jsr&labelColor=000000&color=8700d7&logoColor=ff00ff)](https://jsr.io/%40staticcanvas/snailtrail) [![jsdelivr-hitsperweek](https://img.shields.io/jsdelivr/npm/hw/@staticcanvas/snailtrail?style=flat-square&logo=jsdelivr&labelColor=000000&color=8700d7&logoColor=ff00ff)](https://cdn.jsdelivr.net/package/npm/snailtrail) [![unpkg-version](https://img.shields.io/npm/v/@staticcanvas/snailtrail?style=flat-square&logo=unpkg&label=unpkg&labelColor=000000&color=8700d7&logoColor=ff00ff)](https://www.npmjs.com/package/snailtrail) [![npm-sizeMin](https://img.shields.io/bundlephobia/min/@staticcanvas/snailtrail?style=flat-square&logo=npm&labelColor=000000&color=8700d7&logoColor=ff00ff)](https://www.npmjs.com/package/snailtrail) [![npm-sizeZipped](https://img.shields.io/bundlephobia/minzip/@staticcanvas/snailtrail?style=flat-square&logo=npm&labelColor=000000&color=8700d7&logoColor=ff00ff)](https://www.npmjs.com/package/snailtrail)
 
-## 🟫 Features
+## 🟣 **Features** 
 
 - **Performance Monitoring** - ***TTFB***, ***FCP***, ***LCP***, ***Resource Timing***
 - **Resource Analysis** - Track scripts, ***`stylesheets`***, ***`images`*** with sizes and load times
@@ -26,11 +23,10 @@ A lightweight, comprehensive debug panel for static sites built with Jekyll, Ele
 - **Simple usage:** `localstorage` variable, window `__BUILD_TIMESTAMP__`, `__BUILD_HASH__`, `__BUILD_ENV__`
 - **UI memory**: Remember UI state: `open`, `close`, `height`
 
-## 🟫 Quick Start
+## 🟣 **Quick Start**
 
 ### 🎮 Keyboard Shortcuts
 
-[![jsr](https://img.shields.io/jsr/v/%40staticcanvas/logcad?style=flat-square&logo=jsr&labelColor=00ffff&color=0000af)](https://jsr.io/%40staticcanvas/)
 
 - `Ctrl+Shift+D` - Toggle debug panel visibility
 
@@ -56,10 +52,12 @@ A lightweight, comprehensive debug panel for static sites built with Jekyll, Ele
      // - `__BUILD_TIMESTAMP__`, `__BUILD_HASH__`, `__BUILD_ENV__` in window
      ```
 
-🔘 **`Option 2:` NPM | Module ( `type="module"` )** 
+🔘 **`Option 2:` ES Module ( `type="module"` )** 
  1. Install snail trail debugger
      ```bash
-     npm install snailtrail-debugger
+     npm install snailtrail-debugger # use npm
+     # or via cdn: jsdelivr
+     <script src="https://cdn.jsdelivr.net/npm/snailtrail-debugger@latest/dist/snailtrail.js"></script>
      ```
  2. Import requred functions 
 
@@ -86,7 +84,7 @@ A lightweight, comprehensive debug panel for static sites built with Jekyll, Ele
       ```
 
 
-## 🟫 Static Site Generator Integration
+## 🟣 **Static Site Generator Integration**
 
 ### 🔸 Jekyll
 
@@ -145,7 +143,7 @@ eleventyConfig.addShortcode("buildInfo", function() {
 {{ end }}
 ```
 
-## 🟧 Debug Panel Tabs
+## 🟣 **Debug Panel Tabs**
 
 ### 1. Performance
 - Page load time
@@ -192,7 +190,7 @@ eleventyConfig.addShortcode("buildInfo", function() {
 - Build Environment
 
 
-## 🟫 Styling
+## **Styling**
 
 The debugger includes minimal default styles. You can customize by targeting these classes:
 
@@ -206,7 +204,7 @@ The debugger includes minimal default styles. You can customize by targeting the
 .debug-list { /* List items */ }
 ```
 
-## 🟫 API Methods
+## **API Methods**
 
 ```javascript
 // Refresh all data
@@ -219,7 +217,7 @@ window.snailDebugger.destroy();
 console.log(window.snailDebugger.consoleLog);
 ```
 
-## 🤝 Use Cases
+##  **Use Cases**
 
 - **Local Development** - Monitor performance during development
 - **Client Demos** - Show technical metrics to stakeholders
@@ -228,7 +226,7 @@ console.log(window.snailDebugger.consoleLog);
 - **Accessibility Checks** - Find images missing alt attributes
 - **Build Verification** - Confirm correct build artifacts deployed
 
-## 📝 Best Practices
+## **Best Practices**
 
 1. **Only enable in development** - Use environment checks in your templates
 2. **Inject build info** - Makes debugging production issues easier
@@ -236,7 +234,7 @@ console.log(window.snailDebugger.consoleLog);
 4. **Monitor console tab** - Catch JavaScript errors early
 5. **Check failed resources** - Identify broken asset links
 
-## 🔒 Security Note
+## **Security Note**
 
 The debugger only collects **client-side data** that's already accessible through the browser. It does not:
 - Send data to external servers
@@ -246,7 +244,7 @@ The debugger only collects **client-side data** that's already accessible throug
 
 However, **always disable in production** unless needed for specific debugging scenarios.
 
-## 🐛 Troubleshooting
+## **Troubleshooting**
 
 **Panel doesn't appear:**
 - Check `localStorage.__snail_debug` is set to `'true'` (string, not boolean)
@@ -262,25 +260,25 @@ However, **always disable in production** unless needed for specific debugging s
 - LCP requires user interaction on some browsers
 - Wait for full page load before checking
 
-## 📄 License
+## **License**
 
-MIT License - feel free to use in personal and commercial projects.
+[MIT License](https://gitlab.com/staticcanvas/snailtrail/blob/main/LICENSE) - feel free to use in personal and commercial projects.
 
-## 🙏 Acknowledgments
+## **Acknowledgments**
 
 - Laravel Debug Bar by **Taylor Otwell**
 - Symfony Web Debug Toolbar by **Fabien Potencier**
 - Browser DevTools by **Google**
 
-## 🌟 Contributing
+## **Contributing**
 
 Contributions welcome! Please feel free to submit a Pull Request.
 
-## 📬 Support
+## **Support**
 
-- 🐛 [Report a bug](https://github.com/yourusername/snail-trail-debugger/issues)
-- 💡 [Request a feature](https://github.com/yourusername/snail-trail-debugger/issues)
-- 📖 [Documentation](https://github.com/yourusername/snail-trail-debugger/wiki)
+- 🐛 [Report a bug](https://github.com/staticcanvas/snailtrail/issues)
+- 💡 [Request a feature](https://github.com/staticcanvas/snailtrail/issues)
+- 📖 [Documentation](https://github.com/staticcanvas/snailtrail/wiki)
 
 ---
 

@@ -1,10 +1,42 @@
 /**
- * 🐌 Snail Trail Debugger
+ * Snail Trail Debugger
  * A comprehensive debug panel for static sites (Jekyll, Eleventy, Hugo)
  * Activated via localStorage._debug = 'true'
  */
 
-import { logd } from "https://cdn.jsdelivr.net/gh/staticcanvas/logcad@0.4.23/dist/logcad.esm.js";
+// !NOTE: Ensure logcad is available in your environment, because we use vite we have to import it this way
+// !SEE: external: ['logcad'], // Exclude logd and logc from the bundle but make sure they are available at runtime
+// import { logd } from 'logcad'; // 
+
+/**
+ * @class SnailTrailDebugger
+ * A comprehensive debug panel for static sites.
+ * Activates when localStorage._debug is set to 'true'.
+ * Provides insights into performance, resources, environment, JS state, DOM structure, and build info.     
+ * Usage:
+ * const snailTrailDebugger = new SnailTrailDebugger();
+ * Options can be passed to customize behavior and appearance.
+ * @param {Object} options - Configuration options for the debugger.
+ * @param {string} [options.storageKey="__snail_debug"] - Local storage key to toggle debugger.
+ * @param {string} [options.panelId="debug-panel"] - ID for the debug panel element.
+ * @param {Object} [options.buildInfo={}] - Build information to display (timestamp, hash, env).
+ * @param {string} [options.theme="theme-snailtrail"] - Initial theme for the debug panel.
+ * @param {string} [options.logname="stdebugger"] - Log name for logcad logging.
+ * @returns {SnailTrailDebugger} Instance of the SnailTrailDebugger.
+ * @example
+ * // Enable debugger
+ * localStorage.setItem('__snail_debug', 'true');
+ * const debugger = new SnailTrailDebugger({
+ *   buildInfo: {
+ *   timestamp: '2024-06-01T12:00:00Z',
+ *   hash: 'abc123def',
+ *   env: 'production'
+ *  }
+ * });
+ * // Disable debugger
+ * localStorage.removeItem('__snail_debug');
+ * 
+ */
 
 class SnailTrailDebugger {
     constructor(options = {}) {
@@ -18,7 +50,7 @@ class SnailTrailDebugger {
         };
 
         this.isEnabled =
-            localStorage.getItem(this.options.storageKey) === "true";
+        localStorage.getItem(this.options.storageKey) === "true";
         this.panel = null;
         this.consoleLog = [];
         this.performanceObserver = null;
@@ -815,7 +847,14 @@ function initSnailTrailDebugger() {
     // *************************************************
     // SETUP EVENT LISTENERS AND INITIALIZE
     // *************************************************
-    if (localStorage.getItem("_debug") === "true") {
+    logd(
+        { name: "stdebugger", logname: "debuglogger" },
+        "initSnailTrailDebugger",
+        "Initializing SnailTrail Debugger...",
+        null,
+        false,
+    )
+    if (localStorage.getItem("__snail_debug") === "true") {
         document.addEventListener("DOMContentLoaded", () => {
             const panel = document.getElementById("debug-panel");
             const toggleButton = document.getElementById("debug-toggle");
@@ -831,7 +870,15 @@ function initSnailTrailDebugger() {
             // also need to set the inline css height for the content area
 
             // check localstorage for calaspse state
+            // if false, expand panel, rememberance for page reloads
             if (localStorage.getItem("_debug_collapsed") === "false") {
+                logd(
+                    { name: "stdebugger", logname: "debuglogger" },
+                    "initSnailTrailDebugger",
+                    "Restoring debug panel to expanded state from localStorage...",
+                    { _debug_collapsed: "false" },
+                    false,
+                );
                 isHidden = false;
                 panel.style.height = "400px";
                 panel.classList.remove("debug-panel-hidden");
@@ -924,36 +971,23 @@ function initSnailTrailDebugger() {
     }
 }
 
+// *************************************************
 // ES6 Module Exports //
+// *************************************************
+export default { SnailTrailDebugger, initSnailTrailDebugger };
+
+
+// *************************************************
+// ES6 Named Exports
+// *************************************************
 export { SnailTrailDebugger, initSnailTrailDebugger };
 
-// Export Scope: Vanilla has autoload functionality //
-// !Note:use type module to use import
-if (
-    typeof module !== "undefined" &&
-    module.exports &&
-    typeof window !== "undefined" &&
-    localStorage.getItem("_debug") === "true"
-) {
-    window.SnailTrailDebugger = new SnailTrailDebugger({
-        storageKey: "__snail_debug",
-        panelId: "debug-panel",
-        buildInfo: {
-            // These should be injected during your build process
-            timestamp: window.__BUILD_TIMESTAMP || null,
-            hash: window.__BUILD_HASH || null,
-            env: window.__BUILD_ENV || null,
-        },
-    });
-    // Auto Setup Debugger
-    initSnailTrailDebugger();
-}
 
-// CommonJS (Node.js/require)
-// !NOTE Mulpiple you return in an object array
-if (typeof module !== "undefined" && module.exports) {
-    module.exports = {
-        SnailTrailDebugger,
-        initSnailTrailDebugger,
-    };
+// *************************************************
+// Make globally available for direct browser use
+// *************************************************
+
+if (typeof window !== 'undefined') {
+    window.SnailTrailDebugger = SnailTrailDebugger;
+    window.initSnailTrailDebugger = initSnailTrailDebugger;
 }

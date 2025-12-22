@@ -31,6 +31,8 @@ lint:
     - main
     - tags
   allow_failure: false
+  tags:
+    - docker
 
 # ------------------------------------------------------
 # Test stage
@@ -85,6 +87,8 @@ build:
     - main
     - tags
   allow_failure: false
+  tags:
+    - docker
 
 # ------------------------------------------------------
 # Deploy to Generic Package Registry
@@ -120,7 +124,8 @@ deploy:generic:
   environment:
     name: Generic
     url: https://gitlab.com/${CI_PROJECT_NAMESPACE}/${CI_PROJECT_NAME}/-/packages/generic/${CI_PROJECT_NAME}/${PROJECT_VERSION}
-
+  tags:
+    - docker
 # ------------------------------------------------------
 # Deploy to npm (triggers jsDelivr automatically)
 # > to bypass npm 2FA for automated releases
@@ -161,7 +166,8 @@ deploy:npm:manual:
   environment:
     name: npm
     url: https://www.npmjs.com/package/${CI_PROJECT_NAME}
-
+  tags:
+    - docker
 # ------------------------------------------------------
 # Auto-deploy on version tags (v1.0.0, 1.0.0, etc.)
 # > to bypass npm 2FA for automated releases
@@ -205,7 +211,8 @@ deploy:npm:auto:
   environment:
     name: npm
     url: https://www.npmjs.com/package/${CI_PROJECT_NAME}
-      
+  tags:
+    - docker
 # ------------------------------------------------------
 # Publish to JSR (JavaScript Registry) for supply chain security
 # As Per: https://jsr.dev/docs/publishing/
@@ -240,7 +247,8 @@ publish:jsr:auto:
   environment:
     name: JSR
     url: https://www.jsr.io/npm/@${CI_PROJECT_NAMESPACE}/${CI_PROJECT_NAME}/v/${PACKAGE_VERSION}
-
+  tags:
+    - docker
 # # ------------------------------------------------------
 # # Generate release notes
 # # ------------------------------------------------------
@@ -291,7 +299,8 @@ generate:generic:release:metadata:
   rules:
     - if: $CI_COMMIT_TAG =~ /^v?\d+\.\d+\.\d+.*$/
       when: always
-
+  tags:
+    - docker
   script:
     # ---------------------------------------------------------
     # STEP 1: Create the PowerShell Script
@@ -435,7 +444,9 @@ release:gitlab:
       artifacts: true
   rules:
     - if: $CI_COMMIT_TAG =~ /^v?\d+\.\d+\.\d+.*$/
-      when: always  
+      when: always 
+  tags:
+    - docker
   before_script:
     - apk add --no-cache bash jq
   script:

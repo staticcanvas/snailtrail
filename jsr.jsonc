@@ -7,7 +7,7 @@
     // The name must be scoped with an '@' (e.g. @username/pkgname)
     "name": "@staticcanvas/snailtrail",
     // Must be a valid SemVer version (e.g. 0.1.0, 1.0.0-rc.1)
-    "version": "0.2.0",
+    "version": "0.2.1",
     // ---------------------------------------------------------
     // EXPORTS
     // ---------------------------------------------------------

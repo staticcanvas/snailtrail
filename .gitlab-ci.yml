@@ -25,6 +25,7 @@ lint:
   script:
     - echo "🔍 Linting code..."
     - npm ci
+    - npm install
     - npm run lint
   only:
     - merge_requests

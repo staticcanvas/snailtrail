@@ -5,7 +5,7 @@
     // PACKAGE IDENTITY
     // ---------------------------------------------------------
     // The name must be scoped with an '@' (e.g. @username/pkgname)
-    "name": "@staticcanvas/logcad",
+    "name": "@staticcanvas/snailtrail",
     // Must be a valid SemVer version (e.g. 0.1.0, 1.0.0-rc.1)
     "version": "0.2.0",
     // ---------------------------------------------------------
@@ -14,7 +14,7 @@
     // Defines what files users can import.
     // "." is the default import (e.g. import { foo } from "@scope/pkg")
     "exports": {
-        ".": "./dist/logcad.js", // The main entry point
+        ".": "./dist/snailtrail.js", // The main entry point
         // "./utils": "./src/utils.ts", // A sub-path import
         // "./cli": "./src/cli.ts" // Example for a CLI tool
     },

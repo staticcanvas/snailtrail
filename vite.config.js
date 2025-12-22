@@ -9,6 +9,7 @@ import copy from 'rollup-plugin-copy';
 import { resolve } from 'path';
 import fs from 'fs';
 import terser from '@rollup/plugin-terser';
+import dts from 'vite-plugin-dts'
 
 const pkg = JSON.parse(fs.readFileSync('./package.json', 'utf8'));
 
@@ -41,6 +42,7 @@ export default defineConfig({
     sourcemap: true,
 
     // Target ES2015 (ES6) to ensure broad compatibility (closest to ES5 without bloating)
+    // other target options: 'es2016', 'es2017', 'es2018', 'es2019', 'es2020', 'es2021', 'es2022', 'es2023', 'es2024', 'esnext'
     target: ['es2015'],
 
     lib: {
@@ -54,6 +56,7 @@ export default defineConfig({
 
     rollupOptions: {
       // Your 4-File Output Strategy
+      external: ['logcad'], // Exclude logd and logc from the bundle but make sure they are available at runtime
       output: [
         // 1. UMD Standard
         {
@@ -74,6 +77,9 @@ export default defineConfig({
               },
             }),
           ],
+          globals: {
+            logcad: 'logcad' // or 'LOGCAD' depending on what the library exports to window
+          }
         },
         // 2. UMD Minified
         {
@@ -95,6 +101,9 @@ export default defineConfig({
               },
             }),
           ],
+          globals: {
+            logcad: 'logcad' // or 'LOGCAD' depending on what the library exports to window
+          }
         },
         // 3. ESM Standard
         {
@@ -113,6 +122,9 @@ export default defineConfig({
               },
             }),
           ],
+          globals: {
+            logcad: 'logcad' // or 'LOGCAD' depending on what the library exports to window
+          }
         },
         // 4. ESM Minified
         {
@@ -132,6 +144,9 @@ export default defineConfig({
               },
             }),
           ],
+          globals: {
+            logcad: 'logcad' // or 'LOGCAD' depending on what the library exports to window
+          }
         },
       ],
     },
@@ -171,5 +186,12 @@ export default defineConfig({
       ],
       hook: 'writeBundle', // Run after build finishes
     }),
+    dts({
+      // This is the magic part for Vanilla JS
+      outDir: `dist/${pkg_name_WNNS}/dist/types`,
+      tsconfigPath: './tsconfig.json',
+      insertTypesEntry: true,
+      copyDtsFiles: true
+    })
   ],
 });

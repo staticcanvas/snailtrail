@@ -30,6 +30,7 @@ lint:
   only:
     - merge_requests
     - main
+    - develop
     - tags
   allow_failure: false
   tags:

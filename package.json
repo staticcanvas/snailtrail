@@ -49,9 +49,10 @@
   ],
   "scripts": {
     "dev": "vite build --watch",
-    "build": "vite build",
+    "build": "npm install --package-lock-only && vite build",
     "lint": "eslint src/**/*.js",
     "lint:fix": "eslint src/**/*.js --fix",
+    "update:package-lock": "npm install --package-lock-only",
     "update:npm": "npm install -g npm@latest",
     "serve:example": "npm run build && shx cp dist/snailtrail/dist/*.js example/ && shx cp dist/snailtrail/dist/*.js.map example/ && shx cp css/default.css example && http-server example -p 8080",
     "publish:npm": "npm run lint:fix && npm run build && cd dist/snailtrail && echo //registry.npmjs.org/:_authToken=${NPM_API_KEY} > .npmrc && npm publish --access public",
